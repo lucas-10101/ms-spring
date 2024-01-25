@@ -3,6 +3,7 @@ package br.com.fullstackdeveloper.hrpayroll.controller;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +18,7 @@ public class ErrorHandlerController {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
-        var response = new HashMap<String, String>();
+        Map<String, String> response = new HashMap<String, String>();
         response.put("date", LocalDateTime.now().format(formatter));
         response.put("error", e.getMessage());
         

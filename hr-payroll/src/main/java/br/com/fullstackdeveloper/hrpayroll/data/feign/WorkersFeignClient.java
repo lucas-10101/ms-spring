@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import br.com.fullstackdeveloper.hrpayroll.data.entities.Worker;
 
 @Component
-@FeignClient(name = "hr-worker", url = "localhost:4444", path = "/workers")
+@FeignClient(name = "hr-worker", path = "/workers")
 public interface WorkersFeignClient {
 
     @GetMapping(path = "/{id}")

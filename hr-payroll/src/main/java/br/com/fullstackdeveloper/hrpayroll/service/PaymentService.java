@@ -14,9 +14,9 @@ public class PaymentService {
     private WorkersFeignClient workersFeignClient;
 
     public Payment getPayment(Integer workerId, int days) {
-        var payment = new Payment();
+        Payment payment = new Payment();
 
-        var worker = getWorker(workerId);
+        Worker worker = getWorker(workerId);
 
         payment.setName(worker.getName());
         payment.setDays(days);

@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
@@ -31,11 +30,11 @@ public class SecurityFilterChainConfiguration {
 
             auth.requestMatchers("/h2-console/**").permitAll();
 
-            auth.anyRequest().fullyAuthenticated();
+            auth.anyRequest().permitAll();
         });
 
         http.formLogin(formLogin -> formLogin.disable());
-        http.httpBasic(Customizer.withDefaults());
+        http.httpBasic(basic -> basic.disable());
 
         return http.build();
     }
@@ -45,7 +44,6 @@ public class SecurityFilterChainConfiguration {
         return new BCryptPasswordEncoder(BCryptVersion.$2A, 11);
     }
 
-    @Bean
     public UserDetailsService userDetailsService() {
 
         UserDetails userDetails = User.withUsername("admin")

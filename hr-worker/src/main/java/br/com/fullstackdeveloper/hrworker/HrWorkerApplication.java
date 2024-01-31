@@ -7,10 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 import br.com.fullstackdeveloper.hrworker.data.entities.Worker;
 import br.com.fullstackdeveloper.hrworker.data.repositories.WorkerRepository;
 
+@EnableEurekaClient
 @SpringBootApplication
 public class HrWorkerApplication implements CommandLineRunner {
 

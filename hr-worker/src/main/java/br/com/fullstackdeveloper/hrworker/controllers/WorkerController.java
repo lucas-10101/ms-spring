@@ -2,6 +2,8 @@ package br.com.fullstackdeveloper.hrworker.controllers;
 
 import java.util.List;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.fullstackdeveloper.hrworker.data.entities.Worker;
 import br.com.fullstackdeveloper.hrworker.data.repositories.WorkerRepository;
-import jakarta.persistence.EntityNotFoundException;
 
 @RestController
 @RequestMapping(path = "/workers")
